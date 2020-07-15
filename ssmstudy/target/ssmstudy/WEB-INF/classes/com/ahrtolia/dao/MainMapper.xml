@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.ahrtolia.dao.MainMapper">
+    <resultMap id="type1Map" type="com.ahrtolia.entity.Type1">
+        <id property="id" column="t1Id"></id>
+        <result property="name" column="t1Name"></result>
+        <collection property="type2" ofType="com.ahrtolia.entity.Type2">
+            <id property="id" column="t2Id"></id>
+            <result property="name" column="t2Name"></result>
+            <collection property="type3" ofType="com.ahrtolia.entity.Type3">
+                <id property="id" column="t3Id"></id>
+                <result property="name" column="t3Name"></result>
+            </collection>
+        </collection>
+        <!--mybatis 支持将多表连接查询出来的结果封装成对象-->
+    </resultMap>
+    <select id="getAllType1" resultMap="type1Map">
+        select t1.id as t1Id,t1.name as t1Name,t2.id as t2Id,t2.name as t2Name ,t3.id as t3Id,t3.name as t3Name
+        from type1 t1,type2 t2,type3 t3 where t3.parentId = t2.id and t2.parentId = t1.id;
+    </select>
+
+    <select id="getAllNews" resultType="com.ahrtolia.entity.News">
+        select * from news;
+    </select>
+    <!--模糊查询-->
+    <select id="searchProduct" resultType="com.ahrtolia.entity.Product">
+        select * from product where name like #{arg0} limit #{arg1},#{arg2};
+    </select>
+    <!--查询模糊查询结果的数量-->
+    <select id="searchProductCount" resultType="int">
+         select count(*) from product where name like #{agr0};
+    </select>
+    <select id="getProductByType1" resultType="com.ahrtolia.entity.Product">
+        select * from product where type1Id = #{arg0} limit #{arg1},#{arg2};
+    </select>
+    <select id="getProductCountByType1" resultType="int">
+         select count(*) from product where type1Id = #{agr0};
+    </select>
+    <select id="getProductByType2" resultType="com.ahrtolia.entity.Product">
+        select * from product where type2Id = #{arg0} limit #{arg1},#{arg2};
+    </select>
+    <select id="getProductCountByType2" resultType="int">
+         select count(*) from product where type2Id = #{agr0};
+    </select>
+    <select id="getProductByType3" resultType="com.ahrtolia.entity.Product">
+        select * from product where type3Id = #{arg0} limit #{arg1},#{arg2};
+    </select>
+    <select id="getProductCountByType3" resultType="int">
+         select count(*) from product where type3Id = #{agr0};
+    </select>
+    <select id="getNews" resultType="com.ahrtolia.entity.News">
+        select * from news limit #{arg0},#{arg1};
+    </select>
+    <select id="getNewsCount" resultType="int">
+        select  count(*) from news;
+    </select>
+</mapper>

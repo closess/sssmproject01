@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.ahrtolia.dao.UserMapper">
+
+    <select id="login" resultType="com.ahrtolia.entity.User">
+        select * from user where username = #{username} and password = #{password};
+    </select>
+    <insert id="register">
+        insert into user (name,username,password,sex,identityCode,email,mobile) values (#{name},#{username},#{password},#{sex},#{identityCode},#{email},#{mobile});
+    </insert>
+    <resultMap id="Orders1" type="com.ahrtolia.entity.Order">
+        <id property="id" column="oId"></id>
+        <result property="count" column="ocount"></result>
+        <association property="product" javaType="com.ahrtolia.entity.Product">
+            <id property="id" column="pId"></id>
+            <result property="name" column="name"></result>
+            <result property="fileName" column="fileName"></result>
+            <result property="price" column="price"></result>
+        </association>
+    </resultMap>
+    <select id="getMyHasPayedOrder" resultMap="Orders1">
+        select o.id as oId,o.count as ocount,p.id as pId,p.name as name,p.fileName as fileName,p.price as price
+        from orders o,product p where o.userId= #{arg0} and o.productId = p.id  and state = 1 limit #{arg1},#{arg2};
+    </select>
+    <select id="getMyHasPayedOrderCount" resultType="int">
+        select count(*) from orders where userId = #{userId} and state = 1;
+    </select>
+    <select id="getProductDetaile" resultType="com.ahrtolia.entity.Product">
+        select * from product where id = #{id}
+    </select>
+    <insert id="addToCar">
+        insert into orders (userId,productId,count,state) values  (#{arg0},#{arg1},#{arg2},#{arg3});
+    </insert>
+    <!--//<resultMap> 标签底层解析时是一个map集合 如果里面的对象属性完全一致的话会出现覆盖的情况-->
+    <!--所以一定要把id标签加上即使不用  因为id是不重复的-->
+    <resultMap id="Orders" type="com.ahrtolia.entity.Order">
+        <id property="id" column="oId"></id>
+        <result property="count" column="ocount"></result>
+        <association property="product" javaType="com.ahrtolia.entity.Product">
+            <result property="name" column="name"></result>
+            <result property="fileName" column="fileName"></result>
+            <result property="price" column="price"></result>
+        </association>
+    </resultMap>
+    <select id="getMyProductCar" resultMap="Orders">
+        select o.id as oId,o.count as ocount,p.name as name,p.fileName as fileName,p.price as price from orders o,product p where o.userId= #{userId} and o.productId = p.id  and state = 0;
+    </select>
+    <delete id="deleteCarProduct">
+        delete from orders where id = #{orderId};
+    </delete>
+    <update id="updateOrderCount">
+        update orders set count = #{arg1} where id = #{arg0};
+    </update>
+    <select id="getUserAddress" resultType="com.ahrtolia.entity.UserAddress">
+      select * from useraddress where userId = #{userId};
+    </select>
+    <update id="updateOrder">
+        update orders set creatTime = #{arg0}, serialNumber = #{arg1}, useraddressId = #{arg2}, state = 1 where userId = #{arg3} and state = 0;
+    </update>
+    <insert id="addAddress">
+        insert into useraddress (userId,address) values (#{arg0},#{arg1});
+    </insert>
+    <select id="getNewAddressId" resultType="int">
+        select u.id from useraddress u where u.userId = #{arg0} and u.address = #{arg1};
+    </select>
+    <select id="getSerialNumber" resultType="String">
+        select serialNumber from orders where id = #{orderId};
+    </select>
+    <select id="getOrderAddress" resultType="String">
+        select address from useraddress where id = #{addressId}
+    </select>
+</mapper>

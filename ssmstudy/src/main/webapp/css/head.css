@@ -1,0 +1,89 @@
+*{
+	margin:0 auto;
+}
+#head_main{
+	width: 100%;
+    min-width: 1200px;
+	height: 40px;
+	background-color: #F6F6F6;
+	font-size: 12px;
+	text-align: center;
+	line-height: 40px;
+}
+
+#head_main #left{
+	width: 200px;
+	height: 40px;
+	float: left;
+}
+
+#head_main #left #selectBtn{
+	cursor: pointer;
+	position: relative;
+	top: -40px;
+	right: -50px;
+}
+
+#head_main #left #selectBtn_img{
+	transform:rotate(180deg);
+	position: relative;
+	left: 10px;
+	top: -2px;
+}
+
+#head_main #right{
+	width: 200px;
+	height: 40px;
+	float: right;
+	margin-right: 100px;
+}
+
+#head_main #right span{
+	color: #FF4E00;
+}
+
+#head_main #head_select{
+	width: 300px;
+	height: 500px;
+	float: left;
+	position: relative;
+	top: 0px;
+	left: 0px;
+	border: 1px solid #CDCDCD;
+	display: none;
+	z-index:10;
+	background-color: white;
+}
+
+#head_main #head_select img{
+	position: relative;
+	top:-7px;
+	left: -50px;
+}
+
+#head_select_title{
+	width: 90%;
+	height: 40px;
+	border-bottom: 1px dotted black;
+	font-size: 15px;
+	text-align: left;
+}
+
+#head_select table{
+	font-size: 13px;
+	margin-left: 10px;
+}
+
+#head_select table span{
+	padding: 5px;
+}
+
+#head_select table span:hover{
+	color: #FF4E00;
+	cursor: pointer;
+}
+
+.selected{
+	background-color: #FF4E00;
+	color: white;
+}
