@@ -42,12 +42,12 @@
 												<div class="zj_l_c">
 													<h2>
 														<a
-															href="/main/getProductByType2.action?type2Id=${type2.id }&page=1">${type2.name}
+															href="/main/getProductByType2.action?type2Id=${type2.id}&page=1">${type2.name}
 														</a>
 													</h2>
 														<%-----------------------------------type2结束-------------------------------------------%>
 													<c:forEach items="${type2.type3}" var="type3">
-														<a href="/main/getProductByType3.action?type3Id=${type3.id }&page=1">${type3.name }</a>|
+														<a href="/main/getProductByType3.action?type3Id=${type3.id}&page=1">${type3.name }</a>|
 													</c:forEach>
 														<%-----------------------------------type3结束-------------------------------------------%>
 
