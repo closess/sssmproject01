@@ -28,31 +28,31 @@
 				<div class="nav_t">全部商品分类</div>
 				<div class="leftNav">
 					<ul>
+						<%--商品大致页面--%>
 						<%-----------------------------------type1开始-------------------------------------------%>
 						<c:forEach items="${type1List}" var="type1">
 							<li>
 								<div class="fj">
 									<span class="n_img"><span></span> <img src="" /></span> <span
-										class="fl">${type1.name }</span>
+										class="fl">${type1.name}</span>
 								</div>
 								<div class="zj">
 									<div class="zj_l">
 <%-----------------------------------type2开始-------------------------------------------%>
-										<c:forEach items="${type1.type2 }" var="type2">
+										<c:forEach items="${type1.type2}" var="type2">
 												<div class="zj_l_c">
-													<h2>
+<%--													<h2>--%>
 														<a
-															href="/main/getProductByType2.action?type2Id=${type2.id}&page=1">${type2.name}
+															href="/main/getProductByType2.action?type2Id=${type2.id}&page=1">${type2.name}:
 														</a>
-													</h2>
+<%--													</h2>--%>
 														<%-----------------------------------type2结束-------------------------------------------%>
 													<c:forEach items="${type2.type3}" var="type3">
-														<a href="/main/getProductByType3.action?type3Id=${type3.id}&page=1">${type3.name }</a>|
+														|<a href="/main/getProductByType3.action?type3Id=${type3.id}&page=1">${type3.name}</a>|
 													</c:forEach>
 														<%-----------------------------------type3结束-------------------------------------------%>
-
-													</c:forEach>
 												</div>
+										</c:forEach>
 									</div>
 								</div>
 							</li>
