@@ -74,7 +74,8 @@
 								</div>
 								<div class="img">
 									<a
-										href="main_getProductDetaile.action?productId=${product.id}">
+<%--										href="main_getProductDetaile.action?productId=${product.id}">//商品详情暂时使用用户的代替--%>
+										href="/user/getProductDetaile.action?productId=${product.id}">
 										<img src="images/${product.fileName} " width="185"
 										height="155" />
 									</a>

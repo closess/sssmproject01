@@ -6,10 +6,10 @@
     <%@ include file="header.jsp" %>
     <title>网上商城</title>
 </head>
-<body>  
+<body>
 <!--Begin Login Begin-->
 
-<div class="log_bg">	
+<div class="log_bg">
     <div class="top">
         <div class="logo"><a href="../main.jsp"><img src="../images/logo.png" width="200" height="70"/></a></div>
     </div>
@@ -27,11 +27,11 @@
               </tr>
               <tr height="70">
                 <td>用户名</td>
-                <td><input type="text" name="username" id="loginName" class="l_user" required/></td>
+                  <td><input type="text" name="username" id="loginName" class="l_user" value="pk" required /> </td>
               </tr>
               <tr height="70">
                 <td>密&nbsp; &nbsp; 码</td>
-                <td><input type="password" name="password" id="password"  class="l_pwd" required/></td>
+                <td><input type="password" name="password" id="password"  class="l_pwd" value="123" required /></td>
               </tr>
               <tr height="60">
               	<td>&nbsp;</td>
@@ -44,13 +44,13 @@
         </div>
     </div>
 </div>
-<!--End Login End--> 
+<!--End Login End-->
 <!--Begin Footer Begin-->
 <div class="btmbg">
     <div class="btm">
         备案/许可证编号：蜀ICP备12009302号-1-www.dingguagua.com   Copyright © 2015-2018 尤洪商城网 All Rights Reserved. 复制必究 , Technical Support: Dgg Group <br />
         <img src="images/b_1.gif" width="98" height="33" /><img src="images/b_2.gif" width="98" height="33" /><img src="images/b_3.gif" width="98" height="33" /><img src="images/b_4.gif" width="98" height="33" /><img src="images/b_5.gif" width="98" height="33" /><img src="images/b_6.gif" width="98" height="33" />
-    </div>    	
+    </div>
 </div>
 </body>
 </html>

@@ -615,7 +615,7 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, '马凯', 'makai', '123123', '男', '610502199505126616', '123123@qq.com', '15619184702', '2.jpg', NULL);
+INSERT INTO `user` VALUES (1, '皮卡丘', 'pk', '123123', '男', '610502199505126616', '123123@qq.com', '15619184702', '2.jpg', NULL);
 
 -- ----------------------------
 -- Table structure for useraddress
