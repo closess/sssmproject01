@@ -91,32 +91,32 @@
 				</div>
 				<div class="pages">
 					<c:if test="${st eq 's'}">
-					<a href="/main/searchProduct.action?page=1" class="p_pre">首页</a>
-					<a href="/main/searchProduct.action?page=${page-1}" class="p_pre">上一页</a>
+					<a href="/main/searchProduct.action?type1Id=${type1Id}&page=1" class="p_pre">首页</a>
+					<a href="/main/searchProduct.action?type1Id=${type1Id}&page=${page-1}" class="p_pre">上一页</a>
 					<a href="javascript:void(0);" class="cur">${page }/${allPageCount }</a>
-					<a href="/main/searchProduct.action?page=${page+1}" class="p_pre">下一页</a>
-					<a href="/main/searchProduct.action?page=${allPageCount }" class="p_pre">尾页</a>
+					<a href="/main/searchProduct.action?type1Id=${type1Id}&page=${page+1}" class="p_pre">下一页</a>
+					<a href="/main/searchProduct.action?type1Id=${type1Id}&page=${allPageCount }" class="p_pre">尾页</a>
 					</c:if>
 					<c:if test="${st eq 't'}">
-						<a href="/main/getProductByType1.action?page=1" class="p_pre">首页</a>
-						<a href="/main/getProductByType1.action?page=${page-1}" class="p_pre">上一页</a>
+						<a href="/main/getProductByType1.action?type1Id=${type1Id}&page=1" class="p_pre">首页</a>
+						<a href="/main/getProductByType1.action?type1Id=${type1Id}&page=${page-1}" class="p_pre">上一页</a>
 						<a href="javascript:void(0);" class="cur">${page }/${allPageCount }</a>
-						<a href="/main/getProductByType1.action?page=${page+1}" class="p_pre">下一页</a>
-						<a href="/main/getProductByType1.action?page=${allPageCount }" class="p_pre">尾页</a>
+						<a href="/main/getProductByType1.action?type1Id=${type1Id}&page=${page+1}" class="p_pre">下一页</a>
+						<a href="/main/getProductByType1.action?type1Id=${type1Id}&page=${allPageCount }" class="p_pre">尾页</a>
 					</c:if>
 					<c:if test="${st eq 't2'}">
-						<a href="/main/getProductByType2.action?page=1" class="p_pre">首页</a>
-						<a href="/main/getProductByType2.action?page=${page-1}" class="p_pre">上一页</a>
+						<a href="/main/getProductByType2.action?type1Id=${type1Id}&page=1" class="p_pre">首页</a>
+						<a href="/main/getProductByType2.action?type1Id=${type1Id}&page=${page-1}" class="p_pre">上一页</a>
 						<a href="javascript:void(0);" class="cur">${page }/${allPageCount }</a>
-						<a href="/main/getProductByType2.action?page=${page+1}" class="p_pre">下一页</a>
-						<a href="/main/getProductByType2.action?page=${allPageCount }" class="p_pre">尾页</a>
+						<a href="/main/getProductByType2.action?type1Id=${type1Id}&page=${page+1}" class="p_pre">下一页</a>
+						<a href="/main/getProductByType2.action?type1Id=${type1Id}&page=${allPageCount }" class="p_pre">尾页</a>
 					</c:if>
 					<c:if test="${st eq 't3'}">
-						<a href="/main/getProductByType3.action?page=1" class="p_pre">首页</a>
-						<a href="main_queryProductByType3.action?page=${page-1}" class="p_pre">上一页</a>
+						<a href="/main/getProductByType3.action?type1Id=${type1Id}&page=1" class="p_pre">首页</a>
+						<a href="main_queryProductByType3.action?type1Id=${type1Id}&page=${page-1}" class="p_pre">上一页</a>
 						<a href="javascript:void(0);" class="cur">${page }/${allPageCount }</a>
-						<a href="/main/getProductByType3.action?page=${page+1}" class="p_pre">下一页</a>
-						<a href="/main/getProductByType3.action?page=${allPageCount }" class="p_pre">尾页</a>
+						<a href="/main/getProductByType3.action?type1Id=${type1Id}&page=${page+1}" class="p_pre">下一页</a>
+						<a href="/main/getProductByType3.action?type1Id=${type1Id}&page=${allPageCount }" class="p_pre">尾页</a>
 					</c:if>
 				</div>
 			</div>

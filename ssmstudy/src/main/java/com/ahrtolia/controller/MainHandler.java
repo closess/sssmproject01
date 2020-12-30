@@ -74,7 +74,7 @@ public class MainHandler {
         //确保分页时不需要前端再把keyWord传过来 或者每次都把keyword存到session中前端分页每次传过来也行
         int pageCount = mainService.getProductCountByType1(type1Id, 8);
         if(type1Id != null){
-            session.setAttribute("type1Id",type1Id);
+            session.setAttribute("type1Id",type1Id);//商品Type1分类是从这个获取的
         }else {
             type1Id = (int) session.getAttribute("type1Id");
         }

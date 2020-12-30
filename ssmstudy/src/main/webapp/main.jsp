@@ -61,7 +61,7 @@
 				</div>
 			</div>
 			<ul class="menu_r">
-				<li><a href="main.jsp">首页</a></li>
+				<li><a href="/main.jsp">首页</a></li>
 				<c:forEach items="${type1List }" var="type1" begin="0" end="7">
 					<li><a
 						href="/main/getProductByType1.action?type1Id=${type1.id }&page=1">${type1.name
